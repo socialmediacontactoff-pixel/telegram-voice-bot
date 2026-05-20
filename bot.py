@@ -125,8 +125,9 @@ def main():
     app.add_handler(CommandHandler("myid", cmd_myid))
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
 
-    logger.info("Bot démarré ✅")
-    app.run_polling()
+logger.info("Bot démarré ✅")
+    import asyncio
+    asyncio.run(app.run_polling())
 
 if __name__ == "__main__":
     main()
